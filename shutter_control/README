@@ -1,0 +1,3 @@
+Simple program to take serial input for a camera shutter duration, output the seconds on an LCD display.
+
+We have not tested the shutter control itself, for now it just blinks a light instead of the shutter control as we do not have the physical hardware for that yet.
