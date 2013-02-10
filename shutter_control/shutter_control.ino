@@ -13,8 +13,9 @@
 
 // Change led to the correct pin number when the device arrives
 int led = 13; // currently the led
+int cameraShutter = 2;
 LiquidCrystal lcd(7,8,9,10,11,12);
-int seconds = 5*1; // default shutter time
+int seconds = 600*1; // default shutter time
 
 void setup() {                
   Serial.begin(9600);
@@ -23,11 +24,13 @@ void setup() {
 }
 
 void loop() {
-    lcd.clear();
+  lcd.clear();
   lcd.print(seconds);
   lcd.print(" seconds");
   digitalWrite(led, HIGH);
-  delay(100);                // Flash shutter for 100 msec
+  digitalWrite(cameraShutter, HIGH);
+  delay(1000);                // Flash shutter for 100 msec
+  digitalWrite(cameraShutter, LOW);
   digitalWrite(led, LOW);
 
   int iter=0;
